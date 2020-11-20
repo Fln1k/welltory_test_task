@@ -24,8 +24,7 @@ for json_file in os.listdir(json_path):
         log(f"<ul>schema file: {schema_file}")
         errors = jsonschema.Draft7Validator(read(f"{schema_path}/{schema_file}")).iter_errors(
             read(f"{json_path}/{json_file}"))
-        if list(errors):
-            for error in sorted(errors, key=lambda e: e.path):
-                log(f"<ul>{str(error.message)}</ul>")
+        for error in sorted(errors, key=lambda e: e.path):
+            log(f"<ul>{str(error.message)}</ul>")
         log("</ul>")
     log("</ul>")

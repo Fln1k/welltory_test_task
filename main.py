@@ -20,4 +20,4 @@ for json_file in os.listdir(json_path):
         for error in errors:
             logging.error(f"<br> json file: {json_file} <br>"
                           f"schema file: {schema_file} <br>"
-                          f"error_message: {str(error.message)} <br>")
+                          f"error_message: {str(error.message)} <br><br>")
